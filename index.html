@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSort Repositories</title>
+    <meta name="description" content="Central hub for EcoSort project repositories including Front-End, Back-End, and Machine Learning.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header slide-down">
+            <div class="logo-container">
+                <i data-lucide="leaf" class="logo-icon"></i>
+                <h1>EcoSort</h1>
+            </div>
+            <p>Select a repository to explore our source code.</p>
+        </header>
+
+        <div class="cards-container">
+            <!-- Front-End Repository -->
+            <a href="https://github.com/ferdiodwi/EcoSort_fe" target="_blank" rel="noopener noreferrer" class="card fade-in" style="--delay: 0.1s">
+                <div class="card-icon fe-icon">
+                    <i data-lucide="layout-template"></i>
+                </div>
+                <div class="card-content">
+                    <h2>Front-End</h2>
+                    <p>User interface and client-side application built for the EcoSort platform. Includes responsive UI and interactions.</p>
+                </div>
+                <div class="card-action">
+                    <span>Explore</span>
+                    <i data-lucide="arrow-right" class="arrow"></i>
+                </div>
+            </a>
+
+            <!-- Back-End Repository -->
+            <a href="https://github.com/ferdiodwi/EcoSort_be" target="_blank" rel="noopener noreferrer" class="card fade-in" style="--delay: 0.2s">
+                <div class="card-icon be-icon">
+                    <i data-lucide="server"></i>
+                </div>
+                <div class="card-content">
+                    <h2>Back-End</h2>
+                    <p>Core API, database logic, and server-side operations handling business logic and data persistence.</p>
+                </div>
+                <div class="card-action">
+                    <span>Explore</span>
+                    <i data-lucide="arrow-right" class="arrow"></i>
+                </div>
+            </a>
+
+            <!-- Machine Learning Repository -->
+            <a href="https://github.com/ferdiodwi/EcoSort_ml" target="_blank" rel="noopener noreferrer" class="card fade-in" style="--delay: 0.3s">
+                <div class="card-icon ml-icon">
+                    <i data-lucide="brain-circuit"></i>
+                </div>
+                <div class="card-content">
+                    <h2>Machine Learning</h2>
+                    <p>AI models and classification logic for automated waste sorting and image recognition.</p>
+                </div>
+                <div class="card-action">
+                    <span>Explore</span>
+                    <i data-lucide="arrow-right" class="arrow"></i>
+                </div>
+            </a>
+        </div>
+        
+        <footer class="fade-in" style="--delay: 0.4s">
+            <p>&copy; <span id="year"></span> EcoSort Team. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Add subtle mouse tracking for cards (hover glow effect)
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
