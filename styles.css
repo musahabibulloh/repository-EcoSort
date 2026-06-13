@@ -10,7 +10,6 @@
     --accent-be: #10b981; /* Green */
     --accent-ml: #8b5cf6; /* Purple */
     --accent-web: #f59e0b; /* Amber */
-    --accent-proposal: #ef4444; /* Red */
     
     --blob-1: rgba(59, 130, 246, 0.4);
     --blob-2: rgba(16, 185, 129, 0.3);
@@ -237,12 +236,6 @@ header p {
     background: rgba(245, 158, 11, 0.15);
     color: var(--accent-web);
     border: 1px solid rgba(245, 158, 11, 0.3);
-}
-
-.proposal-icon {
-    background: rgba(239, 68, 68, 0.15);
-    color: var(--accent-proposal);
-    border: 1px solid rgba(239, 68, 68, 0.3);
 }
 
 /* Typography in Cards */
