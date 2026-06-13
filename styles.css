@@ -1,19 +1,19 @@
 :root {
-    --bg-color: #0b0f19;
-    --card-bg: rgba(20, 27, 45, 0.6);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --card-hover-border: rgba(255, 255, 255, 0.2);
-    --text-main: #f1f5f9;
-    --text-muted: #94a3b8;
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --card-hover-border: #cbd5e1;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
     
-    --accent-fe: #3b82f6; /* Blue */
-    --accent-be: #10b981; /* Green */
-    --accent-ml: #8b5cf6; /* Purple */
-    --accent-web: #f59e0b; /* Amber */
+    --accent-fe: #2563eb; /* Blue */
+    --accent-be: #059669; /* Green */
+    --accent-ml: #7c3aed; /* Purple */
+    --accent-web: #d97706; /* Amber */
     
-    --blob-1: rgba(59, 130, 246, 0.4);
-    --blob-2: rgba(16, 185, 129, 0.3);
-    --blob-3: rgba(139, 92, 246, 0.4);
+    --blob-1: rgba(59, 130, 246, 0.15);
+    --blob-2: rgba(16, 185, 129, 0.1);
+    --blob-3: rgba(139, 92, 246, 0.15);
 }
 
 * {
@@ -44,7 +44,6 @@ body {
     height: 100%;
     overflow: hidden;
     z-index: -1;
-    /* filter: blur(100px); Removed to improve GPU performance */
 }
 
 .blob {
@@ -121,7 +120,7 @@ h1 {
     font-size: 3.5rem;
     font-weight: 800;
     letter-spacing: -0.05em;
-    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -129,13 +128,13 @@ h1 {
 header p {
     font-size: 1.25rem;
     color: var(--text-muted);
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* Cards Container */
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-bottom: 4rem;
 }
@@ -152,10 +151,8 @@ header p {
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
     will-change: transform, border-color, box-shadow;
 }
 
@@ -169,7 +166,7 @@ header p {
     height: 100%;
     background: radial-gradient(
         400px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.05),
+        rgba(0, 0, 0, 0.03),
         transparent 40%
     );
     opacity: 0;
@@ -184,7 +181,7 @@ header p {
 .card:hover {
     transform: translateY(-8px);
     border-color: var(--card-hover-border);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 
 /* Card Content Layering */
@@ -195,8 +192,8 @@ header p {
 
 /* Icons */
 .card-icon {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4rem;
+    height: 4rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
@@ -210,32 +207,32 @@ header p {
 }
 
 .card-icon i {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .fe-icon {
-    background: rgba(59, 130, 246, 0.15);
+    background: rgba(37, 99, 235, 0.1);
     color: var(--accent-fe);
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .be-icon {
-    background: rgba(16, 185, 129, 0.15);
+    background: rgba(5, 150, 105, 0.1);
     color: var(--accent-be);
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    border: 1px solid rgba(5, 150, 105, 0.2);
 }
 
 .ml-icon {
-    background: rgba(139, 92, 246, 0.15);
+    background: rgba(124, 58, 237, 0.1);
     color: var(--accent-ml);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .web-icon {
-    background: rgba(245, 158, 11, 0.15);
+    background: rgba(217, 119, 6, 0.1);
     color: var(--accent-web);
-    border: 1px solid rgba(245, 158, 11, 0.3);
+    border: 1px solid rgba(217, 119, 6, 0.2);
 }
 
 /* Typography in Cards */
@@ -244,15 +241,16 @@ header p {
 }
 
 .card h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 0.75rem;
+    color: var(--text-main);
 }
 
 .card p {
     color: var(--text-muted);
-    font-weight: 300;
-    font-size: 1.05rem;
+    font-weight: 400;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
@@ -262,13 +260,17 @@ header p {
     align-items: center;
     gap: 0.5rem;
     margin-top: 2.5rem;
-    font-weight: 500;
-    color: var(--text-main);
-    transition: color 0.3s ease;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.card:nth-child(1) .card-action { color: var(--accent-fe); }
+.card:nth-child(2) .card-action { color: var(--accent-be); }
+.card:nth-child(3) .card-action { color: var(--accent-ml); }
+.card:nth-child(4) .card-action { color: var(--accent-web); }
+
 .card:hover .card-action {
-    color: #fff;
+    filter: brightness(0.8);
 }
 
 .arrow {
@@ -286,7 +288,7 @@ footer {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.875rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* Entry Animations */
